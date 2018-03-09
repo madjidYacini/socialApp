@@ -26,8 +26,8 @@ app.use('/', index);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
-  err.status = 404;
-  next(err);
+  err.status (404);
+  res.json({error :'not found'})
 });
 
 // error handler
@@ -38,7 +38,7 @@ app.use(function(err, req, res, next) {
 
   // render the error page
   res.status(err.status || 500);
-  res.render('error');
+  res.json({error :"sorry !"});
 });
 
 module.exports = app;
